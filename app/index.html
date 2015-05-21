@@ -2,9 +2,12 @@
 <html class="no-js" ng-app="famousAngularStarter">
   <head>
     <meta charset="utf-8">
-    <title>Famo.us/Angular</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -14,13 +17,18 @@
 
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/lock-screen.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.css">
+    <link rel="stylesheet" href="styles/timbre.css">
 
   </head>
   <body>
 
-    <div ui-view></div>
+    <div style="position: relative; width: 385px; margin: 0 auto;">
+        <img class="phone-frame" style="" src="images/iphone-5s-white-frame.png" />
+        <div class="phone-view-container"   ui-view></div>
+    </div>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -41,6 +49,8 @@
     <!-- inject:partials -->
     <!-- endinject -->
     <!-- endbuild -->
+
+    <script src="vendor/magictouch.js"></script>
 
   </body>
 </html>

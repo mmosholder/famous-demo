@@ -1,10 +1,9 @@
-'use strict';
 
 angular.module('famousAngularStarter',
   ['ngAnimate', 'ngCookies',
     'ngTouch', 'ngSanitize',
     'ngResource', 'ui.router',
-    'famous.angular' ])
+    'famous.angular' ]) // Dependencies
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
@@ -16,8 +15,12 @@ angular.module('famousAngularStarter',
         url: '/jade',
         templateUrl: 'partials/jade.html',
         controller: 'MainCtrl'
+      })
+      .state('demo', {
+        url: '/demo',
+        templateUrl: 'partials/demo.html',
+        controller: 'DemoController'
       });
 
     $urlRouterProvider.otherwise('/');
-  })
-;
+  });
