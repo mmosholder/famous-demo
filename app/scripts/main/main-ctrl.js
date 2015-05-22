@@ -28,12 +28,13 @@ angular.module('famousAngularStarter')
 
     for(var i = 0; i < 8; i++) {
       $scope.gridElements.push({
-        backgroundColor: "hsl(" + (i * 360 / 8) + ", 100%, 50%)"
+        backgroundColor: 'hsl(' + (i * 360 / 8) + ', 100%, 50%)'
       });
     }
 
     $scope.enginePipe.on('click', function(){
       $scope.changeDimensions();
+      $scope.gridElements.splice(0, 1);
 
       if(!$scope.$$phase) $scope.$apply();
     });
@@ -46,10 +47,9 @@ angular.module('famousAngularStarter')
       }
     };
 
-    var toggle = false;
-
-    $scope.changeDimensions = function () {
-        console.log($scope.gridLayoutOptions.dimensions)
+    $scope.changeDimensions = function(){
+      console.log('changing dimensions');
+      $scope.gridLayoutOptions.dimensions[0]++;
     };
 
   });
