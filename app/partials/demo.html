@@ -1,5 +1,6 @@
-  <fa-app style="width: 320px; height: 568px; overflow: hidden;">
-    <fa-draggable fa-pipe-from="handler">
-      <fa-surface fa-background-color="'red'" fa-size="[200, 200]" fa-pipe-to="handler"></fa-surface>
-    </fa-draggable>          
-  </fa-app>
+<fa-app style="width: 100%; height: 500px;">
+    <fa-surface></fa-surface>
+    <fa-grid-layout fa-options="gridLayoutOptions">
+        <fa-surface fa-pipe-to="enginePipe" id="flipper" ng-repeat="element in gridElements" fa-background-color="element.backgroundColor">{{element.index}}</fa-surface>
+    </fa-grid-layout>  
+</fa-app>

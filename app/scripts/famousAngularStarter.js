@@ -8,8 +8,17 @@ angular.module('famousAngularStarter',
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'partials/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'index.html',
+        views: {
+          'indexTemplate': {
+            templateUrl: 'partials/main.html',
+            controller: 'MainCtrl'
+          },
+          'gridTemplate': {
+            templateUrl: 'partials/demo.html',
+            controller: 'DemoController'
+          }
+        }
       })
       .state('jade', {
         url: '/jade',
@@ -20,6 +29,11 @@ angular.module('famousAngularStarter',
         url: '/demo',
         templateUrl: 'partials/demo.html',
         controller: 'DemoController'
+      })
+      .state('transition', {
+        url: '/transition',
+        templateUrl: 'partials/transition.html',
+        controller: 'TransitionController'
       });
 
     $urlRouterProvider.otherwise('/');
